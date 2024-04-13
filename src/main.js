@@ -98,20 +98,20 @@ function handleSubmit(event) {
     event.target.reset();
 }
 
-async function loadFoto() {
-    page = page + 1;
-    console.log(page);
-    loadBtn.classList.add(".hidden");
-    try {
-        const data = await objGallery(page);
-        list.insertAdjacentHTML("beforeend", createMarkup(data));
-       loadBtn.classList.add(".hidden");
-        if (data.page >= data.totalHits) {
-            loadBtn.classList.replace("load-more", "load-more-hidden");
-        }
-    }
-    catch (error) {
-        alert(error.message)
-    }
-};
+// async function loadFoto() {
+//     page = page + 1;
+//     console.log(page);
+//     loadBtn.classList.add(".hidden");
+//     try {
+//         const data = await objGallery(page);
+//         list.insertAdjacentHTML("beforeend", createMarkup(data));
+//        loadBtn.classList.add(".hidden");
+//         if (data.page >= data.totalHits) {
+//             loadBtn.classList.replace("load-more", "load-more-hidden");
+//         }
+//     }
+//     catch (error) {
+//         alert(error.message)
+//     }
+// };
   
