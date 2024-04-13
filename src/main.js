@@ -99,7 +99,7 @@ function handleSubmit(event) {
 }
 
 async function loadFoto() {
-    page += 1;
+    page = page + 1;
     console.log(page);
     loadBtn.classList.add(".hidden");
     try {
