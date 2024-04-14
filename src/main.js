@@ -23,7 +23,7 @@ async function handleSubmit(event) {
   loaderElement.classList.replace("hidden", "loader");
     
     names = event.target.elements.designation.value.trim();
-    page = 1;
+    page = 31;
     
     if (names === '') {
         loaderElement.classList.replace("loader", "hidden");
@@ -44,6 +44,17 @@ async function handleSubmit(event) {
                 message: 'Sorry, there are no images matching your search query. Please try again!',
                 messageColor: 'white',
                 backgroundColor: 'red',
+                position: 'bottomCenter',
+                iconColor: 'white'
+            })
+            return;
+        } else if (data.totalHits < 15) {
+            loaderElement.classList.replace("loader", "hidden");
+              loadBtn.classList.replace("visible", "hidden");
+            iziToast.show({
+                message: "We`re sorry, but you've reached the end of search results.",
+                messageColor: 'white',
+                backgroundColor: 'green',
                 position: 'bottomCenter',
                 iconColor: 'white'
             })
@@ -87,9 +98,9 @@ async function loadFoto() {
     try {
         const data = await objGallery(page, names);
        maxPage = Math.ceil(data.totalHits / 15);
-        
+        console.log(data);
         createMarkup(data);
-loaderElement.classList.replace("hidden", "loader");
+         loaderElement.classList.replace("hidden", "loader");
         
         if (page >= maxPage) {
             loaderElement.classList.replace("loader", "hidden");
