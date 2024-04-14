@@ -2,7 +2,7 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 export const list = document.querySelector(".gallery-nav");
 export function createMarkup(data) {
-    const markup = data.hits
+     const markup = data.hits
     .map(({
         webformatURL,
         largeImageURL,

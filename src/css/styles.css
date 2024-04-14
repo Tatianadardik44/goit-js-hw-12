@@ -48,7 +48,7 @@
 .start-btn {
   padding: 8px 16px;
   border-radius: 8px;
-  padding: 8px 16px;
+
   width: 91px;
   height: 40px;
   background: #4e75ff;
@@ -84,51 +84,27 @@
   padding-left: 20px;
   padding-top: 4px;
 }
+.circle {
+  display: flex;
+  justify-content: center;
+}
 .loader {
-  font-size: 48px;
-  color: #fff;
-  width: 1em;
-  height: 1em;
-  box-sizing: border-box;
-  background-color: currentColor;
-  position: relative;
+  width: 48px;
+  height: 48px;
+  border: 5px solid blue;
+  border-bottom-color: red;
   border-radius: 50%;
-  transform: rotateX(-60deg) perspective(1000px);
-}
-.loader:before,
-.loader:after {
-  content: '';
-  display: block;
-  position: absolute;
+  display: inline-block;
   box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  border-radius: inherit;
-  animation: flowerFlow 1s ease-out infinite;
-}
-.loader:after {
-  animation-delay: 0.4s;
+  animation: rotation 1s linear infinite;
 }
 
-@keyframes flowerFlow {
+@keyframes rotation {
   0% {
-    opacity: 1;
     transform: rotate(0deg);
-    box-shadow: 0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
-      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
-      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
-      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor;
   }
   100% {
-    opacity: 0;
-    transform: rotate(180deg);
-    box-shadow: -1em -1em 0 -0.35em currentcolor,
-      0 -1.5em 0 -0.35em currentcolor, 1em -1em 0 -0.35em currentcolor,
-      -1.5em 0 0 -0.35em currentcolor, 1.5em -0 0 -0.35em currentcolor,
-      -1em 1em 0 -0.35em currentcolor, 0 1.5em 0 -0.35em currentcolor,
-      1em 1em 0 -0.35em currentcolor;
+    transform: rotate(360deg);
   }
 }
 .hidden {
@@ -136,9 +112,12 @@
 }
 /* .load-more-hidden {
   display: none;
+} */
+.button-container {
+  display: flex;
+  justify-content: center;
 }
-
-.load-more {
+/* .js-load-more {
   display: inline-block;
   padding: 10px 20px;
   font-size: 1.2em;
@@ -150,5 +129,21 @@
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
+  margin-top: 24px;
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 } */
+.visible {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
