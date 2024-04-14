@@ -23,7 +23,7 @@ async function handleSubmit(event) {
   loaderElement.classList.replace("hidden", "loader");
     
     names = event.target.elements.designation.value.trim();
-    page = 31;
+    page = 1;
     
     if (names === '') {
         loaderElement.classList.replace("loader", "hidden");
