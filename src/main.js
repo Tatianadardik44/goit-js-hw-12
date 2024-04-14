@@ -24,7 +24,7 @@ async function handleSubmit(event) {
     
     names = event.target.elements.designation.value.trim();
     page = 1;
-    console.log(page);
+    
     if (names === '') {
         loaderElement.classList.replace("loader", "hidden");
         iziToast.show({
@@ -83,11 +83,11 @@ async function handleSubmit(event) {
 
 async function loadFoto() {
     page += 1;
-    console.log(page);
+    
     try {
         const data = await objGallery(page, names);
        maxPage = Math.ceil(data.totalHits / 15);
-        console.log(maxPage);
+        
         createMarkup(data);
 loaderElement.classList.replace("hidden", "loader");
         
