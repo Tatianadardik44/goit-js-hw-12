@@ -13,8 +13,7 @@ export async function objGallery(page, names) {
         per_page: 15
     })
     const {data} = await axios(`${path}?${params}`); 
-   
-    return data;
+   return data;
     
 
     
