@@ -58,6 +58,7 @@ async function handleSubmit(event) {
                 position: 'bottomCenter',
                 iconColor: 'white'
             })
+            createMarkup(data);
             return;
         }
      
