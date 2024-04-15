@@ -72,9 +72,6 @@ async function handleSubmit(event) {
         });
         createMarkup(data);
       
-        
-       
-    
     }
     catch(error){
         iziToast.show({
