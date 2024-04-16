@@ -27,6 +27,7 @@ async function handleSubmit(event) {
     
     if (names === '') {
         loaderElement.classList.replace("loader", "hidden");
+         loadBtn.classList.replace("visible", "hidden");
         iziToast.show({
             message: 'Sorry, there are no images matching your search query. Please try again!',
             messageColor: 'white',
@@ -40,6 +41,7 @@ async function handleSubmit(event) {
         const data = await objGallery(page, names);
         if (data.totalHits === 0) {
             loaderElement.classList.replace("loader", "hidden");
+             loadBtn.classList.replace("visible", "hidden");
             iziToast.show({
                 message: 'Sorry, there are no images matching your search query. Please try again!',
                 messageColor: 'white',
@@ -93,7 +95,7 @@ async function handleSubmit(event) {
 
 async function loadFoto() {
     page += 1;
-    
+  
     try {
         const data = await objGallery(page, names);
        maxPage = Math.ceil(data.totalHits / 15);
@@ -111,7 +113,7 @@ async function loadFoto() {
             position: 'bottomCenter',
             iconColor: 'white'
         });
-        }
+        } 
        
     }
     catch (error) {
